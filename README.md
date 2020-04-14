@@ -34,7 +34,7 @@ This repository is a simple detectron2 based implementation of [EfficientDet](ht
    
    ```python
    >>> import torch
-   >>> ckpt = torch.load(b0.pth, map_location = 'cpu')
+   >>> ckpt = torch.load('b0.pth', map_location = 'cpu')
    >>> ckpt = {'model': ckpt, 'matching_heuristics': True}
    >>> torch.save(ckpt, 'b0_detectron2.pth')
    ```
