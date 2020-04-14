@@ -1,0 +1,40 @@
+_BASE_: "Base-RetinaNet.yaml"
+MODEL:
+  BACKBONE:
+    NAME: "build_retinanet_efficientnet_bifpn_backbone"
+  WEIGHTS: "/home/b0_detectron2.pth"
+  MASK_ON: False
+  EfficientNet:
+    VERSION: 0
+    NORM: 'SyncBN'
+    FREEZE_AT: -1
+  FPN:
+    IN_FEATURES: ["stride-8", "stride-16", "stride-32"]
+    OUT_CHANNELS: 64
+    IN_FEATURE_P6P7: 'stride-32'
+    REPEAT: 3
+    NORM: 'SyncBN'
+  RETINANET:
+    NUM_CONVS: 3
+    NORM: 'SyncBN'
+    FOCAL_LOSS_GAMMA: 1.5
+INPUT:
+#  OUTPUT_SIZE: 512
+#  RAND_CROP_RANGE: [0.1, 2.0]
+  MIN_SIZE_TRAIN: (320, 336, 352, 368, 384, 400)
+  MAX_SIZE_TRAIN: 666
+  MIN_SIZE_TEST: 400
+  MAX_SIZE_TEST: 666
+SOLVER:
+  LR_SCHEDULER_NAME: "WarmupCosineLR"
+  BASE_LR: 0.02
+  IMS_PER_BATCH: 16
+  STEPS: (210000, 250000)
+  MAX_ITER: 270000
+  CLIP_GRADIENTS:
+    ENABLED: True
+    CLIP_TYPE: 'norm'
+    CLIP_VALUE: 10.0
+  WEIGHT_DECAY: 4e-5
+TEST:
+  EVAL_PERIOD: 7500
