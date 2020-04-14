@@ -8,13 +8,13 @@ This repository is a simple detectron2 based implementation of [EfficientDet](ht
 
 ## Notice:
 
-Currently I have only trained EfficientDet-D0 for 36 epochs and get the mAP 29.4% (the official code reaches 33.8%). So, there must be bugs and I'm still investigating.   
+**Currently I have only trained EfficientDet-D0 for 36 epochs and get the mAP 29.4% (the official code reaches 33.8%). So, there must be bugs and I'm still investigating.**   
 
-If you found any bug in the code, please don't hesitate to open an issue and tell me, endless debugging almost drives me crazy :(
+**If you found any bug in the code, please don't hesitate to open an issue and tell me, endless debugging almost drives me crazy :(**
 
 ## Known issues:
 + I use a 400x666 input resolution for D0, but it is 512x512 for the official implementation.
-+ The drop_path_prob is set to 0.2, but maybe it should be set to 0 (?)  
++ The drop_connect_rate is set to 0.2, but maybe it should be set to 0 (?)  
 
 ## Requirements:
 - python>=3.5
@@ -27,15 +27,15 @@ If you found any bug in the code, please don't hesitate to open an issue and tel
 
 3. Clone this repo:
     ```
-    git clone https://github.com/zzzxxxttt/A_simple_detectron2_efficientdet /path/to/efficientdet
+    git clone https://github.com/zzzxxxttt/simple_detectron2_efficientdet /path/to/efficientdet
     ```
 
 4. Download the [pretrained EfficientNet weights](https://github.com/lukemelas/EfficientNet-PyTorch). For example, you downloaded the EfficientNet-B0 weights and name it as b0.pth, run the following codes in python console:
    
    ```python
    >>> import torch
-   >>> ckpt=torch.load(b0.pth, map_location = 'cpu')
-   >>> ckpt={'model': ckpt, 'matching_heuristics': True}
+   >>> ckpt = torch.load(b0.pth, map_location = 'cpu')
+   >>> ckpt = {'model': ckpt, 'matching_heuristics': True}
    >>> torch.save(ckpt, 'b0_detectron2.pth')
    ```
    
