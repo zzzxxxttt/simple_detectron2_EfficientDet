@@ -36,11 +36,17 @@ This repository is a simple detectron2 based implementation of [EfficientDet](ht
 
 ## Results
 
-|      Model      | mAP (val, 36 epoch) | mAP (val, 100 epoch) | paper mAP (test-dev, 300 epoch) |
+|      Model      | mAP (val, 36 epoch) | mAP (val, 100 epoch) | paper mAP (val, 300 epoch) |
 | :-------------: | :-----------------: | :------------------: | :-----------------------------: |
-| EfficientDet-D0 |        29.4%        |        31.9%         |              33.8%              |
+| EfficientDet-D0 |        TBD        |        TBD         |              33.5%              |
+| EfficientDet-D1 |        TBD        |        TBD         |              39.1%              |
+| EfficientDet-D2 |        TBD        |        TBD         |              42.5%              |
+| EfficientDet-D3 |        TBD        |        TBD         |              45.9%              |
+| EfficientDet-D4 |        TBD        |        TBD         |              49.0%              |
+| EfficientDet-D5 |        TBD        |        TBD         |              50.5%              |
+| EfficientDet-D6 |        TBD        |        TBD         |              51.3%              |
+| EfficientDet-D7 |        TBD        |        TBD         |              51.8%              |
 
 ### Note: 
 + result of 300 epoch is about 1% higher than 100 epoch (https://github.com/google/automl/issues/126#issuecomment-610749680)
-+ result of test-dev set is about 0.5% higher than val set
  
