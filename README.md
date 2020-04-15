@@ -1,10 +1,18 @@
-# A simple Detectron2 EfficientDet
+# A simple Detectron2 EfficientDet (working in progress)
 
 This repository is a simple detectron2 based implementation of [EfficientDet](https://arxiv.org/pdf/1911.09070.pdf)
 
 + The backbone part is ported from [EfficientNet-PyTorch](https://github.com/lukemelas/EfficientNet-PyTorch)
 + The BiFPN implementation is based on the [official implementation](https://github.com/google/automl/tree/master/efficientdet)
 + The detection framework is based on [Detectron2](https://github.com/facebookresearch/detectron2)
+
+## Notice:
+
+**If you found any bug in the code, please don't hesitate to open an issue and tell me, endless debugging almost drives me crazy :(**
+
+## Known issues:
++ I use a 400x666 input resolution for D0, but it is 512x512 for the official implementation.
++ The drop_connect_rate is set to 0.2, but maybe it should be set to 0 (?)  
 
 ## Requirements:
 - python>=3.5
