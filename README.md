@@ -35,6 +35,7 @@ This repository is a simple detectron2 based implementation of [EfficientDet](ht
     ```
 
 ## Results
+(still running experiments, will update results soon)
 
 |      Model      | mAP (val, 36 epoch) | mAP (val, 100 epoch) | paper mAP (val, 300 epoch) |
 | :-------------: | :-----------------: | :------------------: | :-----------------------------: |
