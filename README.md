@@ -1,20 +1,10 @@
-# A simple Detectron2 EfficientDet (working in progress)
+# A simple Detectron2 EfficientDet
 
 This repository is a simple detectron2 based implementation of [EfficientDet](https://arxiv.org/pdf/1911.09070.pdf)
 
 + The backbone part is ported from [EfficientNet-PyTorch](https://github.com/lukemelas/EfficientNet-PyTorch)
 + The BiFPN implementation is based on the [official implementation](https://github.com/google/automl/tree/master/efficientdet)
 + The detection framework is based on [Detectron2](https://github.com/facebookresearch/detectron2)
-
-## Notice:
-
-**Currently I have only trained EfficientDet-D0 for 36 epochs and get the mAP 29.4% (the official code reaches 33.8%). So, there must be bugs and I'm still investigating.**   
-
-**If you found any bug in the code, please don't hesitate to open an issue and tell me, endless debugging almost drives me crazy :(**
-
-## Known issues:
-+ I use a 400x666 input resolution for D0, but it is 512x512 for the official implementation.
-+ The drop_connect_rate is set to 0.2, but maybe it should be set to 0 (?)  
 
 ## Requirements:
 - python>=3.5
@@ -43,3 +33,14 @@ This repository is a simple detectron2 based implementation of [EfficientDet](ht
     ```
     python train_net.py --config-file configs/EfficientDet_D0.yaml MODEL.WEIGHTS /path/to/checkpoint_file
     ```
+
+## Results
+
+|      Model      | mAP (val, 36 epoch) | mAP (val, 100 epoch) | paper mAP (test-dev, 300 epoch) |
+| :-------------: | :-----------------: | :------------------: | :-----------------------------: |
+| EfficientDet-D0 |        29.4%        |        31.9%         |              33.8%              |
+
+### Note: 
++ result of 300 epoch is about 1% higher than 100 epoch (https://github.com/google/automl/issues/126#issuecomment-610749680)
++ result of test-dev set is about 0.5% higher than val set
+ 
