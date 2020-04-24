@@ -1,18 +1,10 @@
-# A simple Detectron2 EfficientDet (working in progress)
+# A simple Detectron2 EfficientDet
 
 This repository is a simple detectron2 based implementation of [EfficientDet](https://arxiv.org/pdf/1911.09070.pdf)
 
 + The backbone part is ported from [EfficientNet-PyTorch](https://github.com/lukemelas/EfficientNet-PyTorch)
 + The BiFPN implementation is based on the [official implementation](https://github.com/google/automl/tree/master/efficientdet)
 + The detection framework is based on [Detectron2](https://github.com/facebookresearch/detectron2)
-
-## Notice:
-
-**If you found any bug in the code, please don't hesitate to open an issue and tell me, endless debugging almost drives me crazy :(**
-
-## Known issues:
-+ I use a 400x666 input resolution for D0, but it is 512x512 for the official implementation.
-+ The drop_connect_rate is set to 0.2, but maybe it should be set to 0 (?)  
 
 ## Requirements:
 - python>=3.5
@@ -43,11 +35,11 @@ This repository is a simple detectron2 based implementation of [EfficientDet](ht
     ```
 
 ## Results
-(still running experiments, will update results soon)
+(still running experiments, the running time is much longer than I thought...)
 
-|      Model      | mAP (val, 36 epoch) | mAP (val, 100 epoch) | paper mAP (val, 300 epoch) |
+|      Model      | mAP (val, 100 epochs) | mAP (val, 300 epochs) | paper mAP (val, 300 epochs) |
 | :-------------: | :-----------------: | :------------------: | :-----------------------------: |
-| EfficientDet-D0 |        TBD        |        TBD         |              33.5%              |
+| EfficientDet-D0 |        31.9%        |        32.4%         |              33.5%              |
 | EfficientDet-D1 |        TBD        |        TBD         |              39.1%              |
 | EfficientDet-D2 |        TBD        |        TBD         |              42.5%              |
 | EfficientDet-D3 |        TBD        |        TBD         |              45.9%              |
@@ -55,7 +47,3 @@ This repository is a simple detectron2 based implementation of [EfficientDet](ht
 | EfficientDet-D5 |        TBD        |        TBD         |              50.5%              |
 | EfficientDet-D6 |        TBD        |        TBD         |              51.3%              |
 | EfficientDet-D7 |        TBD        |        TBD         |              51.8%              |
-
-### Note: 
-+ result of 300 epoch is about 1% higher than 100 epoch (https://github.com/google/automl/issues/126#issuecomment-610749680)
- 
