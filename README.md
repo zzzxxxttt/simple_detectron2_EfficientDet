@@ -1,4 +1,6 @@
-# A simple Detectron2 EfficientDet
+# A simple Detectron2 EfficientDet (working in progress)
+
+**update 2020/11/3: There are still some hidden bugs in the code, but due to lack of GPU, I can't continue the experiments** 
 
 This repository is a simple detectron2 based implementation of [EfficientDet](https://arxiv.org/pdf/1911.09070.pdf)
 
@@ -35,15 +37,8 @@ This repository is a simple detectron2 based implementation of [EfficientDet](ht
     ```
 
 ## Results
-(still running experiments, the running time is much longer than I thought...)
 
 |      Model      | mAP (val, 100 epochs) | mAP (val, 300 epochs) | paper mAP (val, 300 epochs) |
 | :-------------: | :-----------------: | :------------------: | :-----------------------------: |
 | EfficientDet-D0 |        31.9%        |        32.4%         |              33.5%              |
-| EfficientDet-D1 |        TBD        |        TBD         |              39.1%              |
-| EfficientDet-D2 |        TBD        |        TBD         |              42.5%              |
-| EfficientDet-D3 |        TBD        |        TBD         |              45.9%              |
-| EfficientDet-D4 |        TBD        |        TBD         |              49.0%              |
-| EfficientDet-D5 |        TBD        |        TBD         |              50.5%              |
-| EfficientDet-D6 |        TBD        |        TBD         |              51.3%              |
-| EfficientDet-D7 |        TBD        |        TBD         |              51.8%              |
+
